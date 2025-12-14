@@ -7,5 +7,17 @@
   </head>
   <body>
     <h1>Mini message board app!</h1>
+    <ul class="messages">
+        <% for (let i = 0; i < messages.length; i++) { %>
+            <li class="message">
+                <div class="msgInfo">
+                    <div class="msgName"><%= messages[i].user %></div>
+                    <div class="msgDate"><%= messages[i].added %></div>
+                </div>
+                <div class="msgText"><%= messages[i].text %></div>
+            </li>
+        <% } %>
+    </ul>
+
   </body>
 </html>
