@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Mini message board app!</h1>
+    <a href="/new">new message</a>
     <ul class="messages">
         <% for (let i = 0; i < messages.length; i++) { %>
             <li class="message">
@@ -15,6 +16,7 @@
                     <div class="msgDate"><%= messages[i].added %></div>
                 </div>
                 <div class="msgText"><%= messages[i].text %></div>
+                <a href="/message/<%= messages[i].id %>">open message</a>
             </li>
         <% } %>
     </ul>
