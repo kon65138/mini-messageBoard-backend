@@ -6,6 +6,7 @@ async function getAllMessages() {
 }
 
 async function getMsgById(messageId) {
+  console.log(messageId);
   const { rows } = await pool.query(
     `SELECT * FROM messages WHERE id='${messageId}';`,
   );
