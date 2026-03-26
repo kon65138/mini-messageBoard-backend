@@ -15,7 +15,7 @@ async function getMsgById(messageId) {
 
 async function addMessage(username, text, date) {
   await pool.query(
-    `INSERT INTO messages(username, text, added) VALUES (${username},${text},${date});`,
+    `INSERT INTO messages(username, text, added) VALUES ('${username}','${text}',${date});`,
   );
 }
 
