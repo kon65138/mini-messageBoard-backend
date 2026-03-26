@@ -7,7 +7,7 @@ async function getAllMessages() {
 
 async function getMsgById(messageId) {
   const { rows } = await pool.query(
-    `SELECT * FROM messages WHERE id=${messageId};`,
+    `SELECT * FROM messages WHERE id='${messageId}';`,
   );
   return rows;
   //return messages.find((message) => message.id === messageId);
