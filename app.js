@@ -1,10 +1,13 @@
 require('dotenv').config();
+const createdb = require('./models/createdb');
 const express = require('express');
 const path = require('node:path');
 const indexRouter = require('./routes/indexRouter');
 const newRouter = require('./routes/newRouter');
 const messageRouter = require('./routes/messageRouter');
 const assetsPath = path.join(__dirname, 'public');
+
+createdb.main();
 
 const PORT = 3500;
 
