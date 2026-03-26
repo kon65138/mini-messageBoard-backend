@@ -1,16 +1,13 @@
-const db = require('../models/db');
+const db = require('../models/queries');
 
 module.exports = {
   get: (req, res) => {
     res.render('form');
   },
   post: (req, res) => {
-    db.messages.push({
-      text: req.body.messageBody,
-      user: req.body.messageName,
-      added: new Date(),
-      id: db.messages.length,
-    });
+    const curDate = new Date();
+
+    db.addMessage(req.body.messageBody, req.body.messageName, curDate);
 
     res.redirect('/');
   },

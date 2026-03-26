@@ -1,9 +1,9 @@
-const db = require('../models/db');
+const db = require('../models/queries');
 
 module.exports = {
-  getMsgById: (req, res) => {
+  getMsgById: async (req, res) => {
     const { messageId } = req.params;
-    const message = db.getMsgById(Number(messageId));
+    const message = await db.getMsgById(Number(messageId));
     res.render('message', { curMsg: message });
   },
 };
