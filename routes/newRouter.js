@@ -4,7 +4,7 @@ const newRouter = Router();
 
 const controller = require('../controllers/newController');
 
-newRouter.get('/', controller.get);
-newRouter.post('/', controller.post);
+newRouter.get('/', controller.getNewMessageForm);
+newRouter.post('/', controller.postNewMessageForm);
 
 module.exports = newRouter;
