@@ -15,7 +15,7 @@ function getNewMessageForm(req, res) {
 
 const postNewMessageForm = [
   validateMessage,
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).render('form', {
@@ -26,7 +26,7 @@ const postNewMessageForm = [
     const { messageName, messageBody } = matchedData(req);
     const curDate = new Date();
 
-    db.addMessage(messageName, messageBody, curDate);
+    await db.addMessage(messageName, messageBody, curDate);
 
     res.redirect('/');
   },
